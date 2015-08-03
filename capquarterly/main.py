@@ -18,12 +18,16 @@ import webapp2
 import jinja2
 import os
 from google.appengine.ext import ndb
+# from oauth2client import client
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+class Login(ndb.Model):
+    user = ndb.StringProperty()
+    password = ndb.StringProperty()
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -32,6 +36,23 @@ class MainHandler(webapp2.RequestHandler):
         }
         template = JINJA_ENVIRONMENT.get_template('html/index.html')
         self.response.write(template.render(template_values))
+
+
+class LoginHandler(webapp2.RequestHandler):
+    def get(self):
+        login_query = Login.query()
+        login_data = login_query.fetch()
+        template_values = {
+            'users' : login_data
+        }
+        template = JINJA_ENVIRONMENT.get_template('html/index.html')
+        self.response.write(template.render(template_values))
+    def post(self):
+        user = self.request.get('user')
+        password = self.request.get('password')
+        login = Login(user=user,password=password)
+        login.put()
+        self.redirect('/')
 
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
@@ -45,5 +66,6 @@ class GoalHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/goal', GoalHandler)
+    ('/goal', GoalHandler),
+    ('/login', LoginHandler),
 ], debug=True)
