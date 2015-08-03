@@ -18,12 +18,12 @@ import webapp2
 import jinja2
 import os
 from google.appengine.ext import ndb
+from oauth2client import client
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
-
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
