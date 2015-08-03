@@ -31,6 +31,11 @@ class Login(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        pass
+
+
+class LoginHandler(webapp2.RequestHandler):
+    def get(self):
         login_query = Login.query()
         login_data = login_query.fetch()
         template_values = {
@@ -44,6 +49,7 @@ class MainHandler(webapp2.RequestHandler):
         login = Login(user=user,password=password)
         login.put()
         self.redirect('/')
+
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
         self.request.get("namegoal")
@@ -51,5 +57,6 @@ class GoalHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/goal', GoalHandler)
+    ('/goal', GoalHandler),
+    ('/login', LoginHandler),
 ], debug=True)
