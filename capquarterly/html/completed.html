@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+      <head>
+<title>Completed Goals</title>
+      <head>
+  <body>
+        <h1>Completed Goals</h1> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
+    <form>
+      <p align="right">
+      <input type="submit" value="return to My Goals">
+      <p>
+    </form>
+    {{% for completed in completeds %}}
+    <ul>
+      <li>This is an example of my completed goals</li>
+    </ul>
+    {{% endfor %}}
+  </body>
+</html>
