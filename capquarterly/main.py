@@ -41,7 +41,7 @@ class LoginHandler(webapp2.RequestHandler):
         template_values = {
             'users' : login_data
         }
-        template = JINJA_ENVIRONMENT.get_template('html/login.html')
+        template = JINJA_ENVIRONMENT.get_template('html/index.html')
         self.response.write(template.render(template_values))
     def post(self):
         user = self.request.get('user')
@@ -52,7 +52,12 @@ class LoginHandler(webapp2.RequestHandler):
 
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
-        self.request.get("namegoal")
+        template_values = {
+            'test' : 'working'
+        }
+        template = JINJA_ENVIRONMENT.get_template('test.html')
+        # Put in Giacomo's page line 41 from test to whatever he's named it
+        self.response.write(template.render(template_values))
 
 
 app = webapp2.WSGIApplication([
