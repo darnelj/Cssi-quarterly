@@ -33,6 +33,12 @@ class MainHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('html/login.html')
         self.response.write(template.render(template_values))
 
+class GoalHandler(webapp2.RequestHandler):
+    def get(self):
+        self.request.get("namegoal")
+
+
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/goal', GoalHandler)
 ], debug=True)
