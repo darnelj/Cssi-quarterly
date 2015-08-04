@@ -53,16 +53,15 @@ class MainHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('html/index.html')
         self.response.write(template.render(template_values))
 
-class MyHandler(webapp2.RequestHandler):
-    def get(self):
-        user = users.get_current_user()
-        if user:
-            greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
-                        (user.nickname(), users.create_logout_url('/')))
-        else:
-            greeting = ('<a href="%s">Sign in or register</a>.' %
-                        users.create_login_url('/'))
-
+class LoginHandler(webapp2.RequestHandler):
+  def get(self):
+    user = users.get_current_user()
+    if user:
+        greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
+                    (user.nickname(), users.create_logout_url('/')))
+    else:
+        greeting = ('<a href="%s">Sign in or register</a>.' %
+                    users.create_login_url('/'))
         self.response.out.write('<html><body>%s</body></html>' % greeting)
 # class CreateHandler(webapp2.RequestHandler):
 #     def get(self):
@@ -95,6 +94,7 @@ class MyHandler(webapp2.RequestHandler):
 #         self.response.write(template.render(template_values))
 #     def post(self):
 #         self.redirecr('/goal')
+
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
         items = ['Set up task for Q1', 'Set up task for Q2', 'Set up task for Q3', 'Set up task for Q4']
@@ -117,10 +117,7 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/goal', GoalHandler),
     # ('/create', CreateHandler),
-<<<<<<< HEAD
     # ('/login', LoginHandler),
     # ('/goal', Goal_pageHandler)
-=======
-    # ('/login', LoginHandler)
->>>>>>> 9d25f1c534e8c4f15eab2e05e6137406fdeb10bf
+    ('/login', LoginHandler)
 ], debug=True)
