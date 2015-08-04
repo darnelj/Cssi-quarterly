@@ -79,7 +79,7 @@ class GoalHandler(webapp2.RequestHandler):
         template_values = {
             'test' : 'working'
         }
-        template = JINJA_ENVIRONMENT.get_template('html/goal_page.html')
+        template = JINJA_ENVIRONMENT.get_template('html/ind_goal.html')
         # Put in Giacomo's page line 41 from test to whatever he's named it
         self.response.write(template.render(template_values))
 
