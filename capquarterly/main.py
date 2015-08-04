@@ -31,7 +31,11 @@ class Login(ndb.Model):
 
 class Goals(ndb.Model):
     goal = ndb.StringProperty()
-    timeframe = ndb.IntegerProperty()
+    time_frame = ndb.DateProperty()
+    q1 = ndb.StringProperty()
+    q2 = ndb.StringProperty()
+    q3 = ndb.StringProperty()
+    q4 = ndb.StringProperty()
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
