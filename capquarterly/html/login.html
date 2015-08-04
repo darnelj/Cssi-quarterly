@@ -8,15 +8,15 @@
   <body>
     <!-- // <script src="https://apis.google.com/js/platform.js" async defer></script> -->
     <!-- // <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
-  <form action="/" method="post">
+  <form action="/login" method="post">
     <div>Username: <input name="user"></input></div>
     <div>Password: <input name="password"></input></div>
     <div><input type="submit" value="Create Account"></div>
   </form>
   <br /><br />
-  <form action="/" method="post">
+  <form action="/login" method="post">
     <div>Username: <input name="user"></input></div>
-    <div>Password: <input name="password"></input></div>
+    <div>Password: <input name="password" ></input></div>
     <div><input type="submit" value="Sign In"></div>
   </form>
   {% for user in users %}

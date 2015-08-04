@@ -45,7 +45,7 @@ class LoginHandler(webapp2.RequestHandler):
         template_values = {
             'users' : login_data
         }
-        template = JINJA_ENVIRONMENT.get_template('html/index.html')
+        template = JINJA_ENVIRONMENT.get_template('html/login.html')
         self.response.write(template.render(template_values))
     def post(self):
         user = self.request.get('user')
