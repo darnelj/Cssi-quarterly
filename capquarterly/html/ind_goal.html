@@ -14,8 +14,9 @@
         <p><i>Now we will separate tasks into four quarters and in each one you will come up with your own task and expectations
           by the end of your first quater</i></p>
           <table>
-            {% for item in items:%}
+
             <tr>
+              {% for item in items:%}
               <td><h3>{{item}}</h3>
                 <ul>
                   <li><input type="text" name="first_task"></li>
@@ -24,8 +25,9 @@
                   <li><input type="text" name="fourth_task"></li>
                 </ul>
               </td>
+              {% endfor %}
             </tr>
-            {% endfor %}
+
 
 
         </table>
