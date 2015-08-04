@@ -97,9 +97,11 @@ class LoginHandler(webapp2.RequestHandler):
 
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
+        namegoal = self.request.get('namegoal')
         items = ['Set up task for Q1', 'Set up task for Q2', 'Set up task for Q3', 'Set up task for Q4']
         template_values = {
-            'items': items
+            'items': items,
+            'namegoal': namegoal
         }
         template = JINJA_ENVIRONMENT.get_template('html/ind_goal.html')
         # Put in Giacomo's page line 41 from test to whatever he's named it
