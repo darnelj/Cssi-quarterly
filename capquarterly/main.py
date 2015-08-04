@@ -25,18 +25,18 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-class Login(ndb.Model):
-    user = ndb.StringProperty()
-    password = ndb.StringProperty()
-    goal_key = ndb.KeyProperty(Goals)
-
 class Goals(ndb.Model):
     goal = ndb.StringProperty()
-    time_frame = ndb.DateProperty()
+    time_frame = ndb.IntegerProperty()
     q1 = ndb.StringProperty()
     q2 = ndb.StringProperty()
     q3 = ndb.StringProperty()
     q4 = ndb.StringProperty()
+
+class Login(ndb.Model):
+    user = ndb.StringProperty()
+    password = ndb.StringProperty()
+    goal_key = ndb.KeyProperty(Goals)
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -46,34 +46,37 @@ class MainHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('html/index.html')
         self.response.write(template.render(template_values))
 
-class CreateHandler(webapp2.RequestHandler):
-    def get(self):
-        create_query = Login.query()
-        create_data = create_query.fetch()
-        template_values = {
-            'users' : create_data
-        }
-        template = JINJA_ENVIRONMENT.get_template('html/signup.html')
-        self.response.write(template.render(template_values))
-    def post(self):
-        user = self.request.get('user')
-        password = self.request.get('password')
-        create = Login(user=user,password=password)
-        create.put()
-        self.redirect('/goal')
-class LoginHandler(webapp2.RequestHandler):
-    def get(self):
-        login_query = Login.query()
-        login_data = login_query.fetch()
-        template_values = {
-            'users' : login_data
-        }
-        template = JINJA_ENVIRONMENT.get_template('html/login.html')
-        self.response.write(template.render(template_values))
-    def post(self):
-        user = self.request.get('user')
-        password = self.request.get('password')
-        self.redirect('/goal')
+# class CreateHandler(webapp2.RequestHandler):
+#     def get(self):
+#         create_query = Login.query()
+#         create_data = create_query.fetch()
+#         template_values = {
+#             'users' : create_data
+#         }
+#         template = JINJA_ENVIRONMENT.get_template('html/signup.html')
+#         self.response.write(template.render(template_values))
+#     def post(self):
+#         user = self.request.get('user')
+#         password = self.request.get('password')
+#         create = Login(user=user,password=password)
+#         create.put()
+#         self.redirect('/goal')
+# class LoginHandler(webapp2.RequestHandler):
+#     def get(self):
+#         user = self.request.get('user1')
+#         password = self.request.get('password1')
+#         login = Login(user=user, password=password)
+#         e_key=login.put()
+#         logging = e_key.get()
+#         login_query = Login.query()
+#         login_data = login_query.fetch(logging.id())
+#         template_values = {
+#             'users' : login_data
+#         }
+#         template = JINJA_ENVIRONMENT.get_template('html/login.html')
+#         self.response.write(template.render(template_values))
+#     def post(self):
+#         self.redirecr('/goal')
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
         template_values = {
