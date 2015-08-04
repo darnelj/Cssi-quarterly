@@ -75,8 +75,10 @@ class LoginHandler(webapp2.RequestHandler):
         self.redirect('/goal')
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
+        items = ['Set up task for Q1', 'Set up task for Q2', 'Set up task for Q3', 'Set up task for Q4']
         template_values = {
-            'test' : 'working'
+            'test' : 'working',
+            'items': items
         }
         template = JINJA_ENVIRONMENT.get_template('html/ind_goal.html')
         # Put in Giacomo's page line 41 from test to whatever he's named it
@@ -84,14 +86,14 @@ class GoalHandler(webapp2.RequestHandler):
 
 # class Goal_pageHandler(webapp2.RequestHandler):
 #     def get(self):
-#
-#         template = JINJA_ENVIRONMENT.get_template('html/goal_page.html')
-
+#         items = ['hello', 'Oh Okay', 'hell No!!']
+#         template_vars = {'items': items}
+#         template = JINJA_ENVIRONMENT.get_template('html/ind_goal.html')
+#         self.response.out.write(template.render(template_vars))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/goal', GoalHandler),
     ('/create', CreateHandler),
-    ('/login', LoginHandler),
-    # ('/goal', Goal_pageHandler)
+    ('/login', LoginHandler)
 ], debug=True)

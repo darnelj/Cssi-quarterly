@@ -13,17 +13,22 @@
         </p>
         <p><i>Now we will separate tasks into four quarters and in each one you will come up with your own task and expectations
           by the end of your first quater</i></p>
-   <h4>Set up task for {{Q1}}, (It should take you "<u>this amount of time</u>")</h4>
+          <table>
+            {% for item in items:%}
+            <tr>
+              <td><h3>{{item}}</h3>
+                <ul>
+                  <li><input type="text" name="first_task"></li>
+                  <li><input type="text" name="second_task"></li>
+                  <li><input type="text" name="third_task"></li>
+                  <li><input type="text" name="fourth_task"></li>
+                </ul>
+              </td>
+            </tr>
+            {% endfor %}
 
-    <ul>
-      <li><input type="text" name="first_task"></li>
-      <li><input type="text" name="second_task"></li>
-      <li><input type="text" name="third_task"></li>
-      <li><input type="text" name="fourth_task"></li>
-    </ul>
-    <input type="submit" value="Quarter 2">
-    <input type="submit" value="Quarter 3">
-    <input type="submit" value="Quarter 4">
+
+        </table>
       </form>
     </body>
 </html>
