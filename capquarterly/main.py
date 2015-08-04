@@ -28,6 +28,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 class Login(ndb.Model):
     user = ndb.StringProperty()
     password = ndb.StringProperty()
+    goal_key = ndb.KeyProperty(Goals)
 
 class Goals(ndb.Model):
     goal = ndb.StringProperty()
