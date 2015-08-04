@@ -78,10 +78,16 @@ class GoalHandler(webapp2.RequestHandler):
         # Put in Giacomo's page line 41 from test to whatever he's named it
         self.response.write(template.render(template_values))
 
+# class Goal_pageHandler(webapp2.RequestHandler):
+#     def get(self):
+#
+#         template = JINJA_ENVIRONMENT.get_template('html/goal_page.html')
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/goal', GoalHandler),
     ('/create', CreateHandler),
     ('/login', LoginHandler),
+    # ('/goal', Goal_pageHandler)
 ], debug=True)
