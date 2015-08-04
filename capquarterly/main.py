@@ -17,7 +17,10 @@
 import webapp2
 import jinja2
 import os
+import json
 from google.appengine.ext import ndb
+from google.appengine.api import users
+
 # from oauth2client import client
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -25,13 +28,10 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-<<<<<<< HEAD
-=======
 class Login(ndb.Model):
     user = ndb.StringProperty()
     password = ndb.StringProperty()
 
->>>>>>> 80db3ddd60092d9f6ebf9559434eaeb683b9c002
 class Goals(ndb.Model):
     goal = ndb.StringProperty()
     time_frame = ndb.IntegerProperty()
@@ -53,6 +53,17 @@ class MainHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('html/index.html')
         self.response.write(template.render(template_values))
 
+class MyHandler(webapp2.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user:
+            greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
+                        (user.nickname(), users.create_logout_url('/')))
+        else:
+            greeting = ('<a href="%s">Sign in or register</a>.' %
+                        users.create_login_url('/'))
+
+        self.response.out.write('<html><body>%s</body></html>' % greeting)
 # class CreateHandler(webapp2.RequestHandler):
 #     def get(self):
 #         create_query = Login.query()
@@ -102,7 +113,7 @@ class GoalHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/goal', GoalHandler),
-    ('/create', CreateHandler),
-    ('/login', LoginHandler),
+    # ('/create', CreateHandler),
+    # ('/login', LoginHandler),
     # ('/goal', Goal_pageHandler)
 ], debug=True)
