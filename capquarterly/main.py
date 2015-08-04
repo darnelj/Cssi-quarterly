@@ -29,6 +29,10 @@ class Login(ndb.Model):
     user = ndb.StringProperty()
     password = ndb.StringProperty()
 
+class Goals(ndb.Model):
+    goal = ndb.StringProperty()
+    timeframe = ndb.IntegerProperty()
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         template_values = {
@@ -44,14 +48,14 @@ class CreateHandler(webapp2.RequestHandler):
         template_values = {
             'users' : create_data
         }
-        template = JINJA_ENVIRONMENT.get_template('html/create.html')
+        template = JINJA_ENVIRONMENT.get_template('html/signup.html')
         self.response.write(template.render(template_values))
     def post(self):
         user = self.request.get('user')
         password = self.request.get('password')
         create = Login(user=user,password=password)
         create.put()
-        self.redirect('/')
+        self.redirect('/goal')
 class LoginHandler(webapp2.RequestHandler):
     def get(self):
         login_query = Login.query()
@@ -64,7 +68,7 @@ class LoginHandler(webapp2.RequestHandler):
     def post(self):
         user = self.request.get('user')
         password = self.request.get('password')
-        self.redirect('/')
+        self.redirect('/goal')
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
         template_values = {
