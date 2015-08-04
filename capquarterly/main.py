@@ -25,13 +25,11 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-<<<<<<< HEAD
-=======
+
 class Login(ndb.Model):
     user = ndb.StringProperty()
     password = ndb.StringProperty()
 
->>>>>>> 80db3ddd60092d9f6ebf9559434eaeb683b9c002
 class Goals(ndb.Model):
     goal = ndb.StringProperty()
     time_frame = ndb.IntegerProperty()
@@ -102,7 +100,7 @@ class GoalHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/goal', GoalHandler),
-    ('/create', CreateHandler),
-    ('/login', LoginHandler),
+    # ('/create', CreateHandler),
+    # ('/login', LoginHandler),
     # ('/goal', Goal_pageHandler)
 ], debug=True)
