@@ -1,0 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
+title{
+    font-family: 'Poiret One', cursive;
+}
+body{
+    font-family: 'Poiret One', cursive;
+    text-align: center;
+    background-image:url("grid_tile.jpg");
+    background-size:contain;
+    background-repeat: repeat;
+}
+h1{
+  font-weight: bolder;
+}
+article{
+  background-color: white;
+  float: left;
+}
+#logo{
+  position:sticky;
+  text-align:left
+}

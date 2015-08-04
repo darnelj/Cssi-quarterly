@@ -28,6 +28,10 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> d1e1e3501c3134c5267ddda7b42178b194cba693
 class Login(ndb.Model):
     user = ndb.StringProperty()
     password = ndb.StringProperty()
@@ -99,23 +103,27 @@ class GoalHandler(webapp2.RequestHandler):
     def get(self):
         items = ['Set up task for Q1', 'Set up task for Q2', 'Set up task for Q3', 'Set up task for Q4']
         template_values = {
-            'test' : 'working',
             'items': items
         }
         template = JINJA_ENVIRONMENT.get_template('html/ind_goal.html')
         # Put in Giacomo's page line 41 from test to whatever he's named it
         self.response.write(template.render(template_values))
 
-# class Goal_pageHandler(webapp2.RequestHandler):
-#     def get(self):
-#         items = ['hello', 'Oh Okay', 'hell No!!']
-#         template_vars = {'items': items}
-#         template = JINJA_ENVIRONMENT.get_template('html/ind_goal.html')
-#         self.response.out.write(template.render(template_vars))
+class Goal_pageHandler(webapp2.RequestHandler):
+    def get(self):
+        template_values = {
+            'test' : 'working'
+        }
+        template = JINJA_ENVIRONMENT.get_template('html/goal_page.html')
+        self.response.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/goal', GoalHandler),
+<<<<<<< HEAD
+=======
+    ('/list', Goal_pageHandler)
+>>>>>>> d1e1e3501c3134c5267ddda7b42178b194cba693
     # ('/create', CreateHandler),
     # ('/login', LoginHandler),
     # ('/goal', Goal_pageHandler)
