@@ -44,7 +44,7 @@ class CreateHandler(webapp2.RequestHandler):
         template_values = {
             'users' : create_data
         }
-        template = JINJA_ENVIRONMENT.get_template('html/login.html')
+        template = JINJA_ENVIRONMENT.get_template('html/create.html')
         self.response.write(template.render(template_values))
     def post(self):
         user = self.request.get('user')
