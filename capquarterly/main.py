@@ -37,7 +37,6 @@ class MainHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('html/index.html')
         self.response.write(template.render(template_values))
 
-
 class LoginHandler(webapp2.RequestHandler):
     def get(self):
         login_query = Login.query()
