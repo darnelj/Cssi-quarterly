@@ -29,6 +29,10 @@ class Login(ndb.Model):
     user = ndb.StringProperty()
     password = ndb.StringProperty()
 
+class Goals(ndb.Model):
+    goal = ndb.StringProperty()
+    timeframe = ndb.IntegerProperty()
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         template_values = {
