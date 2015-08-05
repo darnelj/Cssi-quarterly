@@ -61,8 +61,8 @@ nav {
 	width: 23%;
   border-radius:20px;
   position:absolute;
-  top: 1px;
-  right:1px;
+  top: 1%;
+  right:1%;
 }
 nav ul {
 	margin: 1%;
@@ -90,7 +90,7 @@ nav > ul > li > a {
 		}
 
 
-    
+
 =======
 }
 #goal{
