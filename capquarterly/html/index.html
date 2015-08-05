@@ -6,23 +6,23 @@
     <link rel="stylesheet" type="text/css" href="../css/index.css">
   </head>
   <body>
-  <img id="logo" src="../css/logo.gif" width = 25%>
+  <img id="logo" src="../css/logo.gif" width =25%>
   <br /><br />
-<article>
+  <span>
   <nav>
-	<ul>
-		<li><a href="/list">My Goals Page</a></li>
-		<li><a href="/login">Login</a></li>
-		<li><a href="https://accounts.google.com/signup">Sign Up</a></li>
-	</ul>
-</nav>
-  <h1><strong>Aspire Higher</strong></h1>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/list">My Goals Page</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="https://accounts.google.com/signup">Sign Up</a></li>
+  </ul>
+  </nav>
+</span>
+<article>
+  <!-- <h1><strong>Aspire Higher</strong></h1> -->
   <form action="/goal" method="get" id="goal">
-  <strong>What's your goal?<strong>: <input type="text" name="namegoal" size=25>
+  <strong>What's your goal?<strong>:   <textarea name="namegoal" form="goal">Enter goal here...</textarea>
   <input type="submit" value="Submit">
-  </form>
-  <form action="/create" id="login">
-    <input type="submit" value="Login">
   </form>
   </article>
   </body>
