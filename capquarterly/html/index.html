@@ -6,51 +6,50 @@
     <!-- <script src="../javascript/moment.min.js"></script> -->
     <!-- <script src="../javascript/combodate.js"></script> -->
     <link rel="stylesheet" type="text/css" href="../css/index.css">
-<<<<<<< HEAD
-    <script type="text/javascript">
+<script type="text/javascript">
 
-      var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+  var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
 
-      function populatedropdown(monthfield, dayfield, yearfield){
-      var today=new Date()
-      var monthfield=document.getElementById(monthfield)
-      var dayfield=document.getElementById(dayfield)
-      var yearfield=document.getElementById(yearfield)
-      for (var m=0; m<12; m++)
-      monthfield.options[m]=new Option(monthtext[m], monthtext[m])
-      monthfield.options[today.getMonth()]=new Option(monthtext[today.getMonth()], monthtext[today.getMonth()], true, true) //select today's month
-      for (var i=0; i<31; i++)
-      dayfield.options[i]=new Option(i, i+1)
-      dayfield.options[today.getDate()]=new Option(today.getDate(), today.getDate(), true, true) //select today's day
-      var thisyear=today.getFullYear()
-      for (var y=0; y<20; y++){
-      yearfield.options[y]=new Option(thisyear, thisyear)
-      thisyear+=1
-      }
-      yearfield.options[0]=new Option(today.getFullYear(), today.getFullYear(), true, true) //select today's year
-      }
-    </script>
-      </head>
-      <body>
-      <img id="logo" src="../css/logo.gif" width =25%>
-      <br /><br />
-      <span>
-      <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/list">My Goals Page</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="https://accounts.google.com/signup">Sign Up</a></li>
-      </ul>
-      </nav>
-    </span>
-    <article>
-      <!-- <h1><strong>Aspire Higher</strong></h1> -->
-      <form action="/goal" method="get" id="goal">
-      <strong>What's your goal?<strong>:   <textarea name="namegoal" form="goal">Enter goal here...</textarea>
-      <input type="submit" value="Submit" id="submit-button">
-      </form>
-    </article>
+  function populatedropdown(monthfield, dayfield, yearfield){
+  var today=new Date()
+  var monthfield=document.getElementById(monthfield)
+  var dayfield=document.getElementById(dayfield)
+  var yearfield=document.getElementById(yearfield)
+  for (var m=0; m<12; m++)
+  monthfield.options[m]=new Option(monthtext[m], monthtext[m])
+  monthfield.options[today.getMonth()]=new Option(monthtext[today.getMonth()], monthtext[today.getMonth()], true, true) //select today's month
+  for (var i=0; i<31; i++)
+  dayfield.options[i]=new Option(i, i+1)
+  dayfield.options[today.getDate()]=new Option(today.getDate(), today.getDate(), true, true) //select today's day
+  var thisyear=today.getFullYear()
+  for (var y=0; y<20; y++){
+  yearfield.options[y]=new Option(thisyear, thisyear)
+  thisyear+=1
+  }
+  yearfield.options[0]=new Option(today.getFullYear(), today.getFullYear(), true, true) //select today's year
+  }
+</script>
+  </head>
+  <body>
+    <img id="logo" src="../css/logo.gif" width =20%>
+  <br /><br />
+  <span>
+  <nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/list">My Goals List</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="https://accounts.google.com/signup">Sign Up</a></li>
+  </ul>
+  </nav>
+</span>
+<article>
+  <!-- <h1><strong>Aspire Higher</strong></h1> -->
+  <form action="/goal" method="get" id="goal">
+  <strong>What's your goal?<strong>: <textarea name="namegoal" form="goal">Enter goal here...</textarea>
+  <input type="submit" value="Set your Goal" id="submit-button">
+  </form>
+  </article>
   <!-- <input type="text" id="datetime24" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY     HH : mm" name="datetime" value="21-12-2012 20:30">
   <script>
   $(function(){
@@ -73,29 +72,5 @@
     populatedropdown("monthdropdown", "daydropdown", "yeardropdown")
     }
     </script>
-=======
-
-  </head>
-  <body>
-    <img id="logo" src="../css/logo.gif" width =20%>
-  <br /><br />
-  <span>
-  <nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/list">My Goals List</a></li>
-    <li><a href="/login">Login</a></li>
-    <li><a href="https://accounts.google.com/signup">Sign Up</a></li>
-  </ul>
-  </nav>
-</span>
-<article>
-  <!-- <h1><strong>Aspire Higher</strong></h1> -->
-  <form action="/goal" method="get" id="goal">
-  <strong>What's your goal?<strong>: <textarea name="namegoal" form="goal">Enter goal here...</textarea>
-  <input type="submit" value="Set your Goal" id="submit-button">
-  </form>
-  </article>
->>>>>>> 7f0f4148963193d3e49063e42ceeeaa67991310a
   </body>
 </html>
