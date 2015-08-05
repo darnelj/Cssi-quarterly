@@ -79,8 +79,10 @@ class GoalHandler(webapp2.RequestHandler):
         pass
 class Goal_pageHandler(webapp2.RequestHandler):
     def get(self):
+        namegoal = self.request.get('namegoal')
         template_values = {
-            'test' : 'working'
+            'test' : 'working',
+            'namegoal': namegoal
         }
         template = JINJA_ENVIRONMENT.get_template('html/goal_page.html')
         self.response.write(template.render(template_values))
