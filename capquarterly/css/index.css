@@ -90,3 +90,9 @@ nav > ul > li > a {
 #goal{
   height:200px;
 }
+#submit-button{
+  display:inline-block;
+  width: 100px;
+  height: 200px;
+  font-size: 20pt;
+}
