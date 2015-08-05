@@ -28,10 +28,6 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-class Login(ndb.Model):
-    user = ndb.StringProperty()
-    password = ndb.StringProperty()
-
 class Goals(ndb.Model):
     goal = ndb.StringProperty()
     time_frame = ndb.IntegerProperty()
@@ -39,6 +35,7 @@ class Goals(ndb.Model):
     q2 = ndb.StringProperty()
     q3 = ndb.StringProperty()
     q4 = ndb.StringProperty()
+    user_id = ndb.StringProperty()
 
 class Login(ndb.Model):
     user = ndb.StringProperty()
@@ -63,38 +60,6 @@ class LoginHandler(webapp2.RequestHandler):
         greeting = ('<a href="%s">Sign in or register</a>.' %
                     users.create_login_url('/'))
         self.response.out.write('<html><body>%s</body></html>' % greeting)
-# class CreateHandler(webapp2.RequestHandler):
-#     def get(self):
-#         create_query = Login.query()
-#         create_data = create_query.fetch()
-#         template_values = {
-#             'users' : create_data
-#         }
-#         template = JINJA_ENVIRONMENT.get_template('html/signup.html')
-#         self.response.write(template.render(template_values))
-#     def post(self):
-#         user = self.request.get('user')
-#         password = self.request.get('password')
-#         create = Login(user=user,password=password)
-#         create.put()
-#         self.redirect('/goal')
-# class LoginHandler(webapp2.RequestHandler):
-#     def get(self):
-#         user = self.request.get('user1')
-#         password = self.request.get('password1')
-#         login = Login(user=user, password=password)
-#         e_key=login.put()
-#         logging = e_key.get()
-#         login_query = Login.query()
-#         login_data = login_query.fetch(logging.id())
-#         template_values = {
-#             'users' : login_data
-#         }
-#         template = JINJA_ENVIRONMENT.get_template('html/login.html')
-#         self.response.write(template.render(template_values))
-#     def post(self):
-#         self.redirecr('/goal')
-
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
         namegoal = self.request.get('namegoal')
@@ -107,6 +72,8 @@ class GoalHandler(webapp2.RequestHandler):
         # Put in Giacomo's page line 41 from test to whatever he's named it
         self.response.write(template.render(template_values))
 
+    def post(self):
+        # put here the creation of goal records in datastore
 class Goal_pageHandler(webapp2.RequestHandler):
     def get(self):
         template_values = {
@@ -119,8 +86,5 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/goal', GoalHandler),
     ('/list', Goal_pageHandler),
-    # ('/create', CreateHandler),
-    # ('/login', LoginHandler),
-    # ('/goal', Goal_pageHandler)
     ('/login', LoginHandler)
 ], debug=True)
