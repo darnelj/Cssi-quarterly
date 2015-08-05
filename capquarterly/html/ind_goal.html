@@ -4,7 +4,7 @@
 <title>My Goal page</title>
 <link rel="stylesheet" type="text/css" href="../css/goal_page.css">
   <body>
-        <form>
+          <form action="/goal" method="post">
             <h3>My "short or long" term goal</h3> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
         <h4 align="right">{{namegoal}}</h4>
 
@@ -13,6 +13,7 @@
         <p><i>Now we will separate tasks into four quarters and in each one you will come up with your own task and expectations
           by the end of your first quater</i></p>
           <table>
+<<<<<<< HEAD
    <h4>Set up task for all of your Q's, (It should take you "<u>this amount of time</u>")</h4>
             <tr>
               <td><h3 align="center">{{items[0]}}</h3>
@@ -32,6 +33,9 @@
                 </ul>
               </td>
             </tr>
+=======
+   <h4>Set up task for {{Q1}}, (It should take you "<u>this amount of time</u>")</h4>
+>>>>>>> f76fc185971cdc0bcc6e748c43e252c2fa23a454
             <tr>
               <td><h3 align="center">{{items[2]}}</h3>
                 <ul>
