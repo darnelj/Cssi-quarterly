@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
-      <head>
-<title>My Goal page</title>
-<link rel="stylesheet" type="text/css" href="../css/goal_page.css">
-  <body>
+    <head>
+    <title>My Goal page</title>
+    <link rel="stylesheet" type="text/css" href="../css/goal_page.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+  </head>
+<body>
+    <img id="logo" src="../css/logo.gif" width =25%>
+    <br /><br />
+    <span>
+    <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/list">My Goals List</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="https://accounts.google.com/signup">Sign Up</a></li>
+    </ul>
+    </nav>
+  </span>
+    <article id="ind-goal-art">
           <form action="/goal" method="post">
             <h3>My "short or long" term goal</h3> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
         <h4 align="right">{{namegoal}}</h4>
-
-          <a href="/list">Go to My goal list</a>
-        </p>
-        <p><i>Now we will separate tasks into four quarters and in each one you will come up with your own task and expectations
-          by the end of your first quater</i></p>
+        <p id=directions>Now we will separate our goals into four quarters. In each one you will come up with your own task and expectations for each quarter.</p>
           <table>
    <h4>Set up task for all of your Q's, (It should take you "<u>this amount of time</u>")</h4>
             <tr>
@@ -32,6 +43,10 @@
                 </ul>
               </td>
             </tr>
+<<<<<<< HEAD
+=======
+   <h4>Set up task for {{Q1}}, (It should take you "<u>this amount of time</u>")</h4>
+>>>>>>> 8490b39dcdbd753fdce54fd55354175007c21311
             <tr>
               <td><h3 align="center">{{items[2]}}</h3>
                 <ul>
@@ -53,5 +68,6 @@
         </table>
       </form>
       <a href="/">Go to home page</a>
+    </article>
     </body>
 </html>

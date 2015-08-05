@@ -1,4 +1,12 @@
-p{
-color:red;
-font-weight: bold;
+
+h3{
+  font-family: 'ABeeZee', sans-serif;
+  font-weight: bold;
+}
+h4{
+  font-family: 'ABeeZee', sans-serif;
+}
+#directions{
+  border: 1px;
+  border: black;
 }
