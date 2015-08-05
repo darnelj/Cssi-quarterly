@@ -74,6 +74,7 @@ class GoalHandler(webapp2.RequestHandler):
 
     def post(self):
         # put here the creation of goal records in datastore
+        pass
 class Goal_pageHandler(webapp2.RequestHandler):
     def get(self):
         template_values = {
