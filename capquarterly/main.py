@@ -73,17 +73,14 @@ class GoalHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('html/ind_goal.html')
         # Put in Giacomo's page line 41 from test to whatever he's named it
         self.response.write(template.render(template_values))
-<<<<<<< HEAD
 
     # def post(self):
     #     # put here the creation of goal records in datastore
     #     pass
-=======
     # put underneath the creation of goal records in datastore
     def post(self):
         # put here the creation of goal records in datastore
         pass
->>>>>>> a1020530dd52d67145f5b2fb2f6f609c755241ce
 class Goal_pageHandler(webapp2.RequestHandler):
     def get(self):
         namegoal = self.request.get('namegoal')
