@@ -52,14 +52,16 @@ class MainHandler(webapp2.RequestHandler):
 
 class LoginHandler(webapp2.RequestHandler):
   def get(self):
+    print "hello, world"
     user = users.get_current_user()
     if user:
         greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
                     (user.nickname(), users.create_logout_url('/')))
+        self.response.write('<html><body>%s</body></html>' % greeting)
     else:
         greeting = ('<a href="%s">Sign in or register</a>.' %
                     users.create_login_url('/'))
-        self.response.out.write('<html><body>%s</body></html>' % greeting)
+        self.response.write('<html><body>%s</body></html>' % greeting)
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
         namegoal = self.request.get('namegoal')
@@ -72,9 +74,9 @@ class GoalHandler(webapp2.RequestHandler):
         # Put in Giacomo's page line 41 from test to whatever he's named it
         self.response.write(template.render(template_values))
     # put underneath the creation of goal records in datastore
-    # def post(self):
-    #     # put here the creation of goal records in datastore
-    #     pass
+    def post(self):
+        # put here the creation of goal records in datastore
+        pass
 class Goal_pageHandler(webapp2.RequestHandler):
     def get(self):
         template_values = {
