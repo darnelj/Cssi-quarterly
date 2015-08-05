@@ -13,12 +13,9 @@
         <p><i>Now we will separate tasks into four quarters and in each one you will come up with your own task and expectations
           by the end of your first quater</i></p>
           <table>
-
-   <h4>Set up task for {{Q1}}, (It should take you "<u>this amount of time</u>")</h4>
-
+   <h4>Set up task for all of your Q's, (It should take you "<u>this amount of time</u>")</h4>
             <tr>
-              {% for item in items:%}
-              <td><h3>{{item}}</h3>
+              <td><h3 align="center">{{items[0]}}</h3>
                 <ul>
                   <li><input type="text" name="first_task"></li>
                   <li><input type="text" name="second_task"></li>
@@ -26,11 +23,34 @@
                   <li><input type="text" name="fourth_task"></li>
                 </ul>
               </td>
-              {% endfor %}
+              <td><h3 align="center">{{items[1]}}</h3>
+                <ul>
+                  <li><input type="text" name="first_task"></li>
+                  <li><input type="text" name="second_task"></li>
+                  <li><input type="text" name="third_task"></li>
+                  <li><input type="text" name="fourth_task"></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td><h3 align="center">{{items[2]}}</h3>
+                <ul>
+                  <li><input type="text" name="first_task"></li>
+                  <li><input type="text" name="second_task"></li>
+                  <li><input type="text" name="third_task"></li>
+                  <li><input type="text" name="fourth_task"></li>
+                </ul>
+              </td>
+              <td><h3 align="center">{{items[3]}}</h3>
+                <ul>
+                  <li><input type="text" name="first_task"></li>
+                  <li><input type="text" name="second_task"></li>
+                  <li><input type="text" name="third_task"></li>
+                  <li><input type="text" name="fourth_task"></li>
+                </ul>
+              </td>
             </tr>
         </table>
-      </form>
-      <form action="/" >
       </form>
     </body>
 </html>
