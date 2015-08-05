@@ -30,7 +30,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class Goals(ndb.Model):
     goal = ndb.StringProperty()
-    time_frame = ndb.IntegerProperty()
+    # time_frame = ndb.IntegerProperty()
     q1a = ndb.StringProperty()
     q1b = ndb.StringProperty()
     q1c = ndb.StringProperty()
@@ -46,7 +46,7 @@ class Goals(ndb.Model):
     q4a = ndb.StringProperty()
     q4b = ndb.StringProperty()
     q4c = ndb.StringProperty()
-    user_id = ndb.StringProperty()
+    # user_id = ndb.StringProperty()
 
 class Login(ndb.Model):
     user = ndb.StringProperty()
@@ -92,7 +92,7 @@ class GoalHandler(webapp2.RequestHandler):
     def post(self):
         goal = Goals(
             goal= self.request.get("namegoal"),
-            time_frame = ndb.IntegerProperty(),
+            # time_frame = ndb.IntegerProperty(),
             q1a = self.request.get("q1a"),
             q1b = self.request.get("q1b"),
             q1c = self.request.get("q1c"),
@@ -104,8 +104,8 @@ class GoalHandler(webapp2.RequestHandler):
             q3c = self.request.get("q3c"),
             q4a = self.request.get("q4a"),
             q4b = self.request.get("q4b"),
-            q4c = self.request.get("q4c"),
-            user_id = self.request.get(""))
+            q4c = self.request.get("q4c"))
+            # user_id = self.request.get(""))
         goal.put()
         pass
 
@@ -126,7 +126,7 @@ class about_usHandler(webapp2.RequestHandler):
         }
         template = JINJA_ENVIRONMENT.get_template('html/about_us.html')
         self.response.write(template.render(template_values))
-        
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/goal', GoalHandler),
