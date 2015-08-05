@@ -32,7 +32,7 @@ article{
   padding: 1%;
   padding-top: .01%;
   border-radius: 20px;
-  box-shadow: 2.5px 2.5px 1.25px #888
+  box-shadow: 2.5px 5px 2.5px #888
 }
 #logo{
   position:sticky;
@@ -44,3 +44,38 @@ article{
   text-align:right;
   margin-right: 21%;
 }
+
+nav {
+  font-family: 'ABeeZee', sans-serif;
+  font-weight: lighter;
+	background-color: #f48282;
+	color:#909090;
+	display: block;
+	margin: 8px 22px 8px 22px;
+	overflow: hidden;
+	width: 90%;
+  border-radius:20px;
+}
+nav ul {
+	margin: 1%;
+	padding: 0;
+}
+
+nav ul li {
+	display: inline-block;
+	list-style-type: none;
+  background-color: white;
+  border-radius: 20px;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+nav > ul > li > a {
+  color:#b2b2b2;
+  display: block;
+  padding: 0 24px;
+  text-decoration: none;
+		}
