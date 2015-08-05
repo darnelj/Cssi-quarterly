@@ -1,20 +1,19 @@
-``<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
       <head>
-<title>Completed Goals</title>
+<title>Your list</title>
       </head>
   <body>
-        <h1>Completed Goals</h1> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
-    <form>
-      <p align="right">
-        <a href="/goal"> return to My Goals </a>
-    </p>
-    <!--{% for completed in completeds %}-->
-    <ul>
-      <li>This is an example of my completed goals</li>
-    </ul>
-  </form>
+        <h1>Your goal list</h1>
 
-  <!--{% endfor %}-->
+        <!--This will indicate if your goal is long or short according to w.e the customer wants-->
+        <a href="/goal"> return to My Goals </a>
+        <form>
+          <!-- {% for namegoal in namegoals:%} -->
+        <ul>
+          <li><input type="checkbox" name="vehicle" value="Car" checked="checked"> {{namegoal}}</li>
+        </ul>
+        <!-- {%endfor%} -->
+      </form>
   </body>
 </html>
