@@ -24,12 +24,13 @@ h1{
 
 }
 article{
+  text-align: center;
   background-color: #e4e4e4 ;
   width: 50% ;
   margin-top: 10%;
   margin-bottom: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 1%;
   padding-top: 1%;
   border-radius: 20px;
@@ -86,20 +87,19 @@ nav > ul > li > a {
   display: inline-block;
   padding:0 24px;
   text-decoration: none;
-<<<<<<< HEAD
 		}
 
-
-
-=======
 }
 #goal{
   height:200px;
 }
 #submit-button{
   display:inline-block;
-  width: 100px;
+  width: 150px;
   height: 200px;
   font-size: 20pt;
 }
->>>>>>> b13a7b81a622fba2211b3eca3eabebcaf9390869
+
+#ind-goal-art{
+  width: 70%;
+}
