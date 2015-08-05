@@ -3,10 +3,39 @@ h3{
   font-family: 'ABeeZee', sans-serif;
   font-weight: bold;
 }
+
 h4{
   font-family: 'ABeeZee', sans-serif;
 }
+
 #directions{
-  border: 1px;
-  border: black;
+  border: 5px solid #ef5f5f;
+}
+
+#ind-goal-art{
+  width: 70%;
+  padding:2%;
+  font-size: 32pt;
+}
+
+td{
+  border: 5px solid blue;
+  margin-left: 100px;
+}
+section{
+  margin: 0 auto;
+  width: 80%;
+}
+div{
+  width: 48%;
+  float: left;
+  margin-left: 1%;
+}
+.clear-fix:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+li{
+ list-style-type: none;
 }

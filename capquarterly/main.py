@@ -31,10 +31,21 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 class Goals(ndb.Model):
     goal = ndb.StringProperty()
     time_frame = ndb.IntegerProperty()
-    q1 = ndb.StringProperty()
-    q2 = ndb.StringProperty()
-    q3 = ndb.StringProperty()
-    q4 = ndb.StringProperty()
+    q1a = ndb.StringProperty()
+    q1b = ndb.StringProperty()
+    q1c = ndb.StringProperty()
+    q1a = ndb.StringProperty()
+    q1b = ndb.StringProperty()
+    q1c = ndb.StringProperty()
+    q2a = ndb.StringProperty()
+    q2b = ndb.StringProperty()
+    q2c = ndb.StringProperty()
+    q3a = ndb.StringProperty()
+    q3b = ndb.StringProperty()
+    q3c = ndb.StringProperty()
+    q4a = ndb.StringProperty()
+    q4b = ndb.StringProperty()
+    q4c = ndb.StringProperty()
     user_id = ndb.StringProperty()
 
 class Login(ndb.Model):
@@ -65,7 +76,7 @@ class LoginHandler(webapp2.RequestHandler):
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
         namegoal = self.request.get('namegoal')
-        items = ['Set up task for Q1', 'Set up task for Q2', 'Set up task for Q3', 'Set up task for Q4']
+        items = ['Set up task for Q1 ', 'Set up task for Q2 ', 'Set up task for Q3 ', 'Set up task for Q4 ']
         template_values = {
             'items': items,
             'namegoal': namegoal
@@ -79,8 +90,25 @@ class GoalHandler(webapp2.RequestHandler):
     #     pass
     # put underneath the creation of goal records in datastore
     def post(self):
-        # put here the creation of goal records in datastore
+        goal = Goals(
+            goal= self.request.get("namegoal"),
+            time_frame = ndb.IntegerProperty(),
+            q1a = self.request.get("q1a"),
+            q1b = self.request.get("q1b"),
+            q1c = self.request.get("q1c"),
+            q2a = self.request.get("q2a"),
+            q2b = self.request.get("q2b"),
+            q2c = self.request.get("q2c"),
+            q3a = self.request.get("q3a"),
+            q3b = self.request.get("q3b"),
+            q3c = self.request.get("q3c"),
+            q4a = self.request.get("q4a"),
+            q4b = self.request.get("q4b"),
+            q4c = self.request.get("q4c"),
+            user_id = self.request.get(""))
+        goal.put()
         pass
+
 class Goal_pageHandler(webapp2.RequestHandler):
     def get(self):
         namegoal = self.request.get('namegoal')
