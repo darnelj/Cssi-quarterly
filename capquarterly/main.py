@@ -76,7 +76,7 @@ class LoginHandler(webapp2.RequestHandler):
 class GoalHandler(webapp2.RequestHandler):
     def get(self):
         namegoal = self.request.get('namegoal')
-        items = ['Set up task for Q1', 'Set up task for Q2', 'Set up task for Q3', 'Set up task for Q4']
+        items = ['Set up task for Q1 ', 'Set up task for Q2 ', 'Set up task for Q3 ', 'Set up task for Q4 ']
         template_values = {
             'items': items,
             'namegoal': namegoal

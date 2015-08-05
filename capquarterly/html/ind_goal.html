@@ -22,52 +22,44 @@
           <form action="/goal" method="post">
             <h3>My "short or long" term goal</h3> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
         <h4 align="right">{{namegoal}}</h4>
-        <p id=directions>Now we will separate our goals into four quarters. In each one you will come up with your own task and expectations for each quarter.</p>
-          <table>
-   <h4>Set up task for all of your Q's, (It should take you "<u>this amount of time</u>")</h4>
-            <tr>
-              <td><h3 align="center">{{items[0]}}</h3>
+        <p id="directions">Now we will separate our goals into four quarters. In each one you will come up with your own task and expectations for each quarter.</p>
+   <!-- <p>Set up task for all of your Q's, (It should take you "<u>this amount of time</u>")</p> -->
+        <section class="clear-fix">
+        <div>
+        <p>{{items[0]}}</p>
+          <ul>
+            <li><input type="text" name="q1a"></li>
+            <li><input type="text" name="q1b"></li>
+            <li><input type="text" name="q1c"></li>
+          </ul>
+        </div>
+        <div>
+          <p>{{items[1]}}</p>
+            <ul>
+              <li><input type="text" name="q2a"></li>
+              <li><input type="text" name="q2b"></li>
+              <li><input type="text" name="q2c"></li>
+              <li>
+            </ul>
+          </div>
+          <div>
+            <p>{{items[2]}}</p>
+              <ul>
+                <li><input type="text" name="q3a"></li>
+                <li><input type="text" name="q3b"></li>
+                <li><input type="text" name="q3c"></li>
+              </ul>
+            </div>
+            <div>
+              <p>{{items[3]}}</p>
                 <ul>
-                  <li><input type="text" name="first_task"></li>
-                  <li><input type="text" name="second_task"></li>
-                  <li><input type="text" name="third_task"></li>
-                  <li><input type="text" name="fourth_task"></li>
+                  <li><input type="text" name="q4a"></li>
+                  <li><input type="text" name="q4b"></li>
+                  <li><input type="text" name="q4c"></li>
                 </ul>
-              </td>
-              <td><h3 align="center">{{items[1]}}</h3>
-                <ul>
-                  <li><input type="text" name="first_task"></li>
-                  <li><input type="text" name="second_task"></li>
-                  <li><input type="text" name="third_task"></li>
-                  <li><input type="text" name="fourth_task"></li>
-                </ul>
-              </td>
-            </tr>
-<<<<<<< HEAD
-=======
-   <h4>Set up task for {{Q1}}, (It should take you "<u>this amount of time</u>")</h4>
->>>>>>> 8490b39dcdbd753fdce54fd55354175007c21311
-            <tr>
-              <td><h3 align="center">{{items[2]}}</h3>
-                <ul>
-                  <li><input type="text" name="first_task"></li>
-                  <li><input type="text" name="second_task"></li>
-                  <li><input type="text" name="third_task"></li>
-                  <li><input type="text" name="fourth_task"></li>
-                </ul>
-              </td>
-              <td><h3 align="center">{{items[3]}}</h3>
-                <ul>
-                  <li><input type="text" name="first_task"></li>
-                  <li><input type="text" name="second_task"></li>
-                  <li><input type="text" name="third_task"></li>
-                  <li><input type="text" name="fourth_task"></li>
-                </ul>
-              </td>
-            </tr>
-        </table>
-      </form>
-      <a href="/">Go to home page</a>
+              </div>
+    </section>
+    </form>
     </article>
     </body>
 </html>
