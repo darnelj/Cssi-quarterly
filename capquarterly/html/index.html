@@ -46,17 +46,11 @@
 <article>
   <!-- <h1><strong>Aspire Higher</strong></h1> -->
   <form action="/goal" method="get" id="goal">
-  <strong>What's your goal?<strong>: <textarea name="namegoal" form="goal">Enter goal here...</textarea>
-  <input type="submit" value="Set your Goal" id="submit-button">
-  </form>
-  </article>
-  <!-- <input type="text" id="datetime24" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY     HH : mm" name="datetime" value="21-12-2012 20:30">
-  <script>
-  $(function(){
-      $('#datetime24').combodate();
-  });
-</script> -->
-    <form action="" name="someform">
+
+  <strong>What's your goal?<strong>: <br />
+  <div id="help">Enter goal and planned date of completion below!</div>
+    <textarea name="namegoal" form="goal">Enter goal here...</textarea>
+    <form action="" name="someform" id="date">
       <select id="monthdropdown">
       </select>
       <select id="daydropdown">
@@ -72,5 +66,14 @@
     populatedropdown("monthdropdown", "daydropdown", "yeardropdown")
     }
     </script>
+  <input type="submit" value="Set your Goal" id="submit-button">
+  </form>
+  </article>
+  <!-- <input type="text" id="datetime24" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY     HH : mm" name="datetime" value="21-12-2012 20:30">
+  <script>
+  $(function(){
+      $('#datetime24').combodate();
+  });
+</script> -->
   </body>
 </html>

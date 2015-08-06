@@ -4,6 +4,8 @@
     <title>My Goal page</title>
     <link rel="stylesheet" type="text/css" href="../css/goal_page.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../javascript/ind.js"></script>
   </head>
 <body>
     <img id="logo" src="../css/logo.gif" width =25%>
@@ -22,81 +24,44 @@
           <form action="/goal" method="post">
             <h3>My Goals</h3> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
         <h4 align="right">{{namegoal}}</h4>
-        <p id="directions">Now we will separate our goals into four quarters. In each one you will come up with your own task and expectations for each quarter.</p>
+        <p id="directions">Now we will separate our goals into four quarters. In each one you will come up with your own task and expectations for each quarter.  Click the plus sign to add more tasks to each quarter.</p>
    <!-- <p>Set up task for all of your Q's, (It should take you "<u>this amount of time</u>")</p> -->
         <section class="clear-fix">
         <div>
-        <p>{{items[0]}}</p>
+        <p>{{items[0]}}<div id="subtract1" class="subtract">-</div><div id="add1" class="add">+</div></p>
           <ul>
             <li><input type="text" name="q1a"></li>
-            <li><input type="text" name="q1b"></li>
-            <li><input type="text" name="q1c"></li>
+            <li class="extra1"><input type="text" name="q1b"></li>
+            <li class="extra1"><input type="text" name="q1c"></li>
           </ul>
         </div>
         <div>
-          <p>{{items[1]}}</p>
+          <p>{{items[1]}}<div id="subtract2" class="subtract">-</div><div id="add2" class="add">+</div></p>
             <ul>
               <li><input type="text" name="q2a"></li>
-              <li><input type="text" name="q2b"></li>
-              <li><input type="text" name="q2c"></li>
-              <li>
+              <li class="extra2"><input type="text" name="q2b"></li>
+              <li class="extra2"><input type="text" name="q2c"></li>
             </ul>
           </div>
           <div>
-            <p>{{items[2]}}</p>
+            <p>{{items[2]}}<div id="subtract3" class="subtract">-</div><div id="add3" class="add">+</div></p>
               <ul>
                 <li><input type="text" name="q3a"></li>
-                <li><input type="text" name="q3b"></li>
-                <li><input type="text" name="q3c"></li>
+                <li class="extra3"><input type="text" name="q3b"></li>
+                <li class="extra3"><input type="text" name="q3c"></li>
               </ul>
             </div>
             <div>
-              <p>{{items[3]}}</p>
+              <p>{{items[3]}}<div id="subtract4" class="subtract">-</div><div id="add4" class="add">+</div></p>
                 <ul>
                   <li><input type="text" name="q4a"></li>
-                  <li><input type="text" name="q4b"></li>
-                  <li><input type="text" name="q4c"></li>
+                  <li class="extra4"><input type="text" name="q4b"></li>
+                  <li class="extra4"><input type="text" name="q4c"></li>
                 </ul>
-<<<<<<< HEAD
-              </td>
-              <td><h3 align="center">{{items[1]}}</h3>
-                <ul>
-                  <li><input type="text" name="first_task"></li>
-                  <li><input type="text" name="second_task"></li>
-                  <li><input type="text" name="third_task"></li>
-                  <li><input type="text" name="fourth_task"></li>
-                </ul>
-              </td>
-            </tr>
-
-   <h4>Set up task for {{Q1}}, (It should take you "<u>this amount of time</u>")</h4>
-            <tr>
-              <td><h3 align="center">{{items[2]}}</h3>
-                <ul>
-                  <li><input type="text" name="first_task"></li>
-                  <li><input type="text" name="second_task"></li>
-                  <li><input type="text" name="third_task"></li>
-                  <li><input type="text" name="fourth_task"></li>
-                </ul>
-              </td>
-              <td><h3 align="center">{{items[3]}}</h3>
-                <ul>
-                  <li><input type="text" name="first_task"></li>
-                  <li><input type="text" name="second_task"></li>
-                  <li><input type="text" name="third_task"></li>
-                  <li><input type="text" name="fourth_task"></li>
-                </ul>
-              </td>
-            </tr>
-        </table>
-      </form>
-      <a href="/">Go to home page</a>
-=======
               </div>
     </section>
     <input type="submit" value="Set your Goal" id="quarter-button">
     </form>
->>>>>>> fbae82cc832971a64bad6a05e3741580c0d04f89
     </article>
     </body>
 </html>

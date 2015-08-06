@@ -35,7 +35,7 @@ article{
   padding-top: 1%;
   border-radius: 20px;
   box-shadow: 2.5px 5px 2.5px #888;
-  font-size:60pt;
+  font-size:55pt;
 }
 #logo{
   position:sticky;
@@ -59,7 +59,7 @@ nav {
   margin-right: 5%;
   margin-top: 1.5%;
 	overflow: hidden;
-	width: 60%;
+	width: 50%;
   border-radius:20px;
   position:absolute;
   top: 1%;
@@ -97,5 +97,12 @@ nav > ul > li > a {
   display:inline-block;
   width: 150px;
   height: 200px;
+  font-size: 20pt;
+}
+#date{
+  display:inline;
+  border: 1%;
+}
+#help{
   font-size: 20pt;
 }
