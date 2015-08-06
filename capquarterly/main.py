@@ -18,7 +18,6 @@ import webapp2
 import jinja2
 import os
 import json
-import datetime
 from google.appengine.ext import ndb
 from google.appengine.api import users
 import datetime
