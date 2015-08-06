@@ -118,12 +118,10 @@ class GoalHandler(webapp2.RequestHandler):
 
 class Goal_pageHandler(webapp2.RequestHandler):
     def get(self):
-        namegoal = self.request.get('namegoal')
         template_values = {
             'test' : 'working',
-            'namegoal': namegoal
         }
-        template = JINJA_ENVIRONMENT.get_template('html/ind_goal.html')
+        template = JINJA_ENVIRONMENT.get_template('html/goal_page.html')
         self.response.write(template.render(template_values))
 
 class about_usHandler(webapp2.RequestHandler):
@@ -136,16 +134,24 @@ class about_usHandler(webapp2.RequestHandler):
 
 class static_Handler(webapp2.RequestHandler):
     def get(self):
+        namegoal = self.request.get('namegoal')
         user = users.get_current_user()
         goals_query = Goals.query()
         goals_query = goals_query.filter(Goals.user_id==user.user_id())
         goals_list = goals_query.fetch()
         template_values = {
+            'namegoal': namegoal,
             'record' : goals_list[0]
         }
 
         template = JINJA_ENVIRONMENT.get_template('html/static.html')
         self.response.write(template.render(template_values))
+
+    def post(self):
+        print self.request.get('namegoal')
+        goal = Goals(goal= self.request.get("namegoal"))
+        pass
+        template = JINJA_ENVIRONMENT.get_template('html/static.html')
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
