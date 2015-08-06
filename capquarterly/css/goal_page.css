@@ -35,7 +35,27 @@ div{
   content: "";
   clear: both;
   display: block;
+  font-size: 20pt;
 }
 li{
  list-style-type: none;
+}
+.add{
+  font-weight: bold;
+}
+.subtract{
+  font-weight: bold;
+}
+.extra1{
+  display: none;
+}
+
+.extra2{
+  display: none;
+}
+.extra3{
+  display: none;
+}
+.extra4{
+  display: none;
 }
