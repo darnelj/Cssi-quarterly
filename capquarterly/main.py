@@ -18,8 +18,10 @@ import webapp2
 import jinja2
 import os
 import json
+import datetime
 from google.appengine.ext import ndb
 from google.appengine.api import users
+import datetime
 
 # from oauth2client import client
 
@@ -27,7 +29,17 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
-
+# Olivia's date thing
+def FindQuarters(end_time):
+    start_time = datetime.date.today()
+    days = end_time - start_time
+    time_period = days / 4
+    quarter1 = start_time + time_period
+    quarter2 = quarter1 + time_period
+    quarter3 = quarter2 + time_period
+    quarter4 = quarter3 + time_period
+    quarters=[quarter1,quarter2,quarter3,quarter4]
+    return quarters
 class Goals(ndb.Model):
     goal = ndb.StringProperty()
     # time_frame = ndb.IntegerProperty()
@@ -62,7 +74,8 @@ class MainHandler(webapp2.RequestHandler):
                           users.create_login_url('/'))
         template_values = {
              'test' : 'working',
-             'greeting' : greeting
+             'greeting' : greeting,
+            #  'date': FindQuarters(datetime.date(2016,8,6))
         }
         template = JINJA_ENVIRONMENT.get_template('html/index.html')
         self.response.write(template.render(template_values))
