@@ -4,6 +4,7 @@
     <title>Quarterly</title>
     <link rel="stylesheet" type="text/css" href="../css/goal_page.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/static.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../javascript/ind.js"></script>
   </head>
@@ -20,54 +21,21 @@
     </ul>
     </nav>
   </span>
-    <article id="ind-goal-art">
-          <form action="/static" method="post">
-            <h3 align="center">{{namegoal}}</h3> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
-            <section class="clear-fix">
-            <div class="q">
-            <p><div id="subtract1" class="subtract"></div><div id="add1" class="add"></div></p>
-              <ul>
-                <li></li>
-                <li class="extra1"></li>
-                <li class="extra1"></li>
-              </ul>
-            </div>
-            <div class="q">
-              <p><div id="subtract2" class="subtract"></div><div id="add2" class="add"></div></p>
-                <ul>
-                  <li></li>
-                  <li class="extra2"></li>
-                  <li class="extra2"></li>
-                </ul>
-              </div>
-              <div class="q">
-                <p><div id="subtract3" class="subtract"></div><div id="add3" class="add"></div></p>
-                  <ul>
-                    <li></li>
-                    <li class="extra3"></li>
-                    <li class="extra3"></li>
-                  </ul>
-                </div>
-                <div class="q">
-                  <p><div id="subtract4" class="subtract"></div><div id="add4" class="add"></div></p>
-                    <ul>
-                      <li></li>
-                      <li class="extra4"></li>
-                      <li class="extra4"></li>
-                    </ul>
-                  </div>
-        </section>
-    </form>
-    <p>{{namegoal}}</p>
+    <article id="staticart">
+    <h2>Your goal: {{namegoal}}</h2>
+    <h1> Quarter 1 </h1>
     <p>{{record.q1a}}</p>
     <p>{{record.q1b}}</p>
     <p>{{record.q1c}}</p>
+    <h1> Quarter 2</h1>
     <p>{{record.q2a}}</p>
     <p>{{record.q2b}}</p>
     <p>{{record.q2c}}</p>
+    <h1> Quarter 3 </h1>
     <p>{{record.q3a}}</p>
     <p>{{record.q3b}}</p>
     <p>{{record.q3c}}</p>
+    <h1> Quarter 4 </h1>
     <p>{{record.q4a}}</p>
     <p>{{record.q4b}}</p>
     <p>{{record.q4c}}</p>
