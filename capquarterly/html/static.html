@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Statis page</title>
+    <link rel="stylesheet" type="text/css" href="../css/goal_page.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../javascript/ind.js"></script>
+  </head>
+<body>
+    <img id="logo" src="../css/logo.gif" width =25%>
+    <br /><br />
+    <span>
+    <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/list">My Goals List</a></li>
+      <li><a href="/login">Login</a></li>
+    </ul>
+    </nav>
+  </span>
+    <article id="ind-goal-art">
+          <form action="/goal" method="post">
+            <h3>My Goals</h3> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
+        <h4 align="center">{{namegoal}}</h4>
+        <p id="directions">Now we will separate our goals into four quarters. In each one you will come up with your own task and expectations for each quarter.  Click the plus sign to add more tasks to each quarter.</p>
+   <!-- <p>Set up task for all of your Q's, (It should take you "<u>this amount of time</u>")</p> -->
+        <section class="clear-fix">
+        <div>
+        <p>{{items[0]}}<div id="subtract1" class="subtract">-</div><div id="add1" class="add">+</div></p>
+          <ul>
+            <li><input type="text" name="q1a"></li>
+            <li class="extra1"><input type="text" name="q1b"></li>
+            <li class="extra1"><input type="text" name="q1c"></li>
+          </ul>
+        </div>
+        <div>
+          <p>{{items[1]}}<div id="subtract2" class="subtract">-</div><div id="add2" class="add">+</div></p>
+            <ul>
+              <li><input type="text" name="q2a"></li>
+              <li class="extra2"><input type="text" name="q2b"></li>
+              <li class="extra2"><input type="text" name="q2c"></li>
+            </ul>
+          </div>
+          <div>
+            <p>{{items[2]}}<div id="subtract3" class="subtract">-</div><div id="add3" class="add">+</div></p>
+              <ul>
+                <li><input type="text" name="q3a"></li>
+                <li class="extra3"><input type="text" name="q3b"></li>
+                <li class="extra3"><input type="text" name="q3c"></li>
+              </ul>
+            </div>
+            <div>
+              <p>{{items[3]}}<div id="subtract4" class="subtract">-</div><div id="add4" class="add">+</div></p>
+                <ul>
+                  <li><input type="text" name="q4a"></li>
+                  <li class="extra4"><input type="text" name="q4b"></li>
+                  <li class="extra4"><input type="text" name="q4c"></li>
+                </ul>
+              </div>
+    </section>
+    <input type="submit" value="Set your Goal" id="quarter-button">
+    </form>
+    </article>
+    </body>
+</html>
