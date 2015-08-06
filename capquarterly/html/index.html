@@ -45,11 +45,12 @@
 </span>
 <article>
   <!-- <h1><strong>Aspire Higher</strong></h1> -->
-  <form action="/goal" method="get" id="goal">
 
   <strong id="title">What's your goal?</strong>: <br />
   <div id="help">Enter goal and planned date of completion below!</div>
-    <textarea name="namegoal" form="goal">Enter goal here...</textarea>
+  <form action="/goal" method="get" id="goal">
+    <input type="text" name="namegoal" size=30>
+    <!-- <textarea name="namegoal" form="goal">Enter goal here...</textarea> -->
     <!-- <form action=" " name="someform" id="date"> -->
       <select id="monthdropdown">
       </select>
@@ -65,7 +66,7 @@
     }
     </script>
 
-  <input type="submit" value="Set your Goal" id="submit-button">
+  <input type="submit" value="Set your Goal" method="get" id="submit-button">
   </form>
   </article>
   <!-- <input type="text" id="datetime24" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY     HH : mm" name="datetime" value="21-12-2012 20:30"> -->
