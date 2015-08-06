@@ -1,14 +1,15 @@
 
 $(function() {
-  $( "#theweeknd" ).hide(0);
+  $( "#Gio" ).hide(0);
   $( "#q" ).click(function() {
-    $( "#theweeknd" ).toggle( "slow" );
+    $( "#Gio" ).toggle( "slow" );
   });
-  // $( "#theweeknd" ).hide(0);
-  // $( "#q" ).click(function() {
-  //   $( "#theweeknd" ).toggle( "slow" );
-  // });
-  // $( "#theweeknd" ).hide(0);
-  // $( "#q" ).click(function() {
-  //   $( "#theweeknd" ).toggle( "slow" );
+  $( "#Darnel" ).hide(0);
+  $( "#x" ).click(function() {
+    $( "#Darnel" ).toggle( "slow" );
+  });
+  $( "#Olivia" ).hide(0);
+  $( "#y" ).click(function() {
+    $( "#Olivia" ).toggle( "slow" );
+  });
 });
