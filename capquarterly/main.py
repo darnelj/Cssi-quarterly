@@ -124,7 +124,16 @@ class about_usHandler(webapp2.RequestHandler):
 
 class static_Handler(webapp2.RequestHandler):
     def get(self):
-
+        user = users.get_current_user()
+        if user:
+            greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
+                          (user.nickname(), users.create_logout_url('/')))
+        else:
+            greeting = ('<a href="%s">Login/Register</a>' %
+                          users.create_login_url('/'))
+        template_values = {
+             'greeting' : greeting
+        }
         template = JINJA_ENVIRONMENT.get_template('html/static.html')
         self.response.write(template.render())
 
