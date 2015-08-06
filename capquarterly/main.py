@@ -47,6 +47,7 @@ class Goals(ndb.Model):
     q4b = ndb.StringProperty()
     q4c = ndb.StringProperty()
     # user_id = ndb.StringProperty()
+    #To Do(darnel) add redirect page here to go to static ind goal page
 
 class Login(ndb.Model):
     user = ndb.StringProperty()
