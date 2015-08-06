@@ -106,10 +106,8 @@ class GoalHandler(webapp2.RequestHandler):
 
 class Goal_pageHandler(webapp2.RequestHandler):
     def get(self):
-        namegoal = self.request.get('namegoal')
         template_values = {
             'test' : 'working',
-            'namegoal': namegoal
         }
         template = JINJA_ENVIRONMENT.get_template('html/goal_page.html')
         self.response.write(template.render(template_values))
@@ -124,6 +122,7 @@ class about_usHandler(webapp2.RequestHandler):
 
 class static_Handler(webapp2.RequestHandler):
     def get(self):
+        namegoal = self.request.get('namegoal')
         user = users.get_current_user()
         if user:
             greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
@@ -132,10 +131,15 @@ class static_Handler(webapp2.RequestHandler):
             greeting = ('<a href="%s">Login/Register</a>' %
                           users.create_login_url('/'))
         template_values = {
-             'greeting' : greeting
+             'namegoal': namegoal
         }
         template = JINJA_ENVIRONMENT.get_template('html/static.html')
-        self.response.write(template.render())
+        self.response.write(template.render(template_values))
+    def post(self):
+        print self.request.get('namegoal')
+        goal = Goals(goal= self.request.get("namegoal"))
+        pass
+        template = JINJA_ENVIRONMENT.get_template('html/static.html')
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),

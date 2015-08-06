@@ -20,15 +20,42 @@
     </nav>
   </span>
     <article id="ind-goal-art">
-          <form action="/goal" method="post">
-            <h3>My goals</h3> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
-      <form>
-        <ul>
-        <li><input type="checkbox" name="vehicle" value="Bike"> I<br> </li>
-        </ul>
-      </form>
-
-    </section>
+          <form action="/static" method="post">
+            <h3 align="center">{{namegoal}}</h3> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
+            <section class="clear-fix">
+            <div class="q">
+            <p><div id="subtract1" class="subtract">-</div><div id="add1" class="add">+</div></p>
+              <ul>
+                <li><input type="text" name="q1a" size=30></li>
+                <li class="extra1"></li>
+                <li class="extra1"></li>
+              </ul>
+            </div>
+            <div class="q">
+              <p><div id="subtract2" class="subtract">-</div><div id="add2" class="add">+</div></p>
+                <ul>
+                  <li><input type="text" name="q2a" size=30></li>
+                  <li class="extra2"></li>
+                  <li class="extra2"></li>
+                </ul>
+              </div>
+              <div class="q">
+                <p><div id="subtract3" class="subtract">-</div><div id="add3" class="add">+</div></p>
+                  <ul>
+                    <li><input type="text" name="q3a" size=30></li>
+                    <li class="extra3"></li>
+                    <li class="extra3"></li>
+                  </ul>
+                </div>
+                <div class="q">
+                  <p><div id="subtract4" class="subtract">-</div><div id="add4" class="add">+</div></p>
+                    <ul>
+                      <li><input type="text" name="q4a"></li>
+                      <li class="extra4"></li>
+                      <li class="extra4"></li>
+                    </ul>
+                  </div>
+        </section>
     </form>
     </article>
     </body>
