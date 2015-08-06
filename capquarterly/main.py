@@ -61,10 +61,10 @@ class MainHandler(webapp2.RequestHandler):
             greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
                           (user.nickname(), users.create_logout_url('/')))
         else:
-             greeting = ('<a href="%s">Sign in or register</a>.' %
+             greeting = ('<a href="%s">Login/Register</a>' %
                           users.create_login_url('/'))
         template_values = {
-             'test' : 'working'
+             'test' : 'working',
              'greeting' : greeting
         }
         template = JINJA_ENVIRONMENT.get_template('html/index.html')
