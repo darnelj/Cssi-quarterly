@@ -114,7 +114,7 @@ class GoalHandler(webapp2.RequestHandler):
             q4c = self.request.get("q4c"),
             user_id = user.user_id())
         goal.put()
-        pass
+        self.redirect('/static')
 
 class Goal_pageHandler(webapp2.RequestHandler):
     def get(self):
@@ -137,6 +137,7 @@ class static_Handler(webapp2.RequestHandler):
         namegoal = self.request.get('namegoal')
         user = users.get_current_user()
         goals_query = Goals.query()
+        print 'Userid', user.user_id()
         goals_query = goals_query.filter(Goals.user_id==user.user_id())
         goals_list = goals_query.fetch()
         template_values = {
