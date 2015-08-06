@@ -47,7 +47,7 @@
   <!-- <h1><strong>Aspire Higher</strong></h1> -->
   <form action="/goal" method="get" id="goal">
 
-  <strong>What's your goal?<strong>: <br />
+  <strong id="title">What's your goal?</strong>: <br />
   <div id="help">Enter goal and planned date of completion below!</div>
     <textarea name="namegoal" form="goal">Enter goal here...</textarea>
     <form action="" name="someform" id="date">
@@ -58,10 +58,9 @@
       <select id="yeardropdown">
       </select>
     </form>
-
     <script type="text/javascript">
 
-    //populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
+    populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
     window.onload=function(){
     populatedropdown("monthdropdown", "daydropdown", "yeardropdown")
     }

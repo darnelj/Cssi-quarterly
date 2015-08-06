@@ -24,12 +24,12 @@ td{
 }
 section{
   margin: 0 auto;
-  width: 80%;
+  width: 85%;
 }
 .q{
-  width: 49%;
+  width: 48%;
   float: left;
-  margin-left: 1%;
+  margin-right: 2%;
 }
 .clear-fix:after{
   content: "";
