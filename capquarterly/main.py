@@ -43,7 +43,7 @@ class Goals(ndb.Model):
     q4a = ndb.StringProperty()
     q4b = ndb.StringProperty()
     q4c = ndb.StringProperty()
-    # user_id = ndb.StringProperty()
+    user_id = ndb.StringProperty()
     #To Do(darnel) add redirect page here to go to static ind goal page
 
 class Login(ndb.Model):
@@ -84,6 +84,7 @@ class GoalHandler(webapp2.RequestHandler):
     #     pass
     # put underneath the creation of goal records in datastore
     def post(self):
+        user = users.get_current_user()
         goal = Goals(
             goal= self.request.get("namegoal"),
             # time_frame = ndb.IntegerProperty(),
@@ -98,8 +99,8 @@ class GoalHandler(webapp2.RequestHandler):
             q3c = self.request.get("q3c"),
             q4a = self.request.get("q4a"),
             q4b = self.request.get("q4b"),
-            q4c = self.request.get("q4c"))
-            # user_id = self.request.get(""))
+            q4c = self.request.get("q4c"),
+            user_id = user.user_id())
         goal.put()
         pass
 

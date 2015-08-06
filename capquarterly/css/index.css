@@ -52,18 +52,18 @@ nav {
   font-family: 'ABeeZee', sans-serif;
   font-weight: lighter;
 	/*background-color: #f48282;*/
-  font-size: 20pt
+  font-size: 15pt
 	color:#909090;
 	display: inline-block;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 1.5%;
 	overflow: hidden;
-	width: 50%;
+	width: 65%;
   border-radius:20px;
   position:absolute;
   top: 1%;
-  right:1%;
+  right:0%;
 }
 nav ul {
 	margin: 1%;

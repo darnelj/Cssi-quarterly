@@ -27,7 +27,7 @@ section{
   width: 80%;
 }
 .q{
-  width: 48%;
+  width: 49%;
   float: left;
   margin-left: 1%;
 }
@@ -42,9 +42,13 @@ li{
 }
 .add{
   font-weight: bold;
+  display: inline-block;
+  width: 5%;
 }
 .subtract{
   font-weight: bold;
+  display: inline-block;
+  width: 5%;
 }
 .extra1{
   display: none;
