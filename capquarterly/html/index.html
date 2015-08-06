@@ -37,7 +37,7 @@
   <nav>
   <ul>
     <li><a href="/">Home</a></li>
-    <li><a href="/list">My Goals List</a></li>
+    <li><a href="/goal">My Goals List</a></li>
     <li><a href="/us">About Us</a></li>
     <li>{{greeting|safe}}</li>
   </ul>
@@ -50,29 +50,27 @@
   <strong id="title">What's your goal?</strong>: <br />
   <div id="help">Enter goal and planned date of completion below!</div>
     <textarea name="namegoal" form="goal">Enter goal here...</textarea>
-    <form action="" name="someform" id="date">
+    <!-- <form action=" " name="someform" id="date"> -->
       <select id="monthdropdown">
       </select>
       <select id="daydropdown">
       </select>
       <select id="yeardropdown">
       </select>
-    </form>
+    <!-- </form> -->
     <script type="text/javascript">
-
-    populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
+    // populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
     window.onload=function(){
-    populatedropdown("monthdropdown", "daydropdown", "yeardropdown")
+    populatedropdown( "monthdropdown", "daydropdown", "yeardropdown")
     }
     </script>
+
   <input type="submit" value="Set your Goal" id="submit-button">
   </form>
   </article>
-  <!-- <input type="text" id="datetime24" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY     HH : mm" name="datetime" value="21-12-2012 20:30">
-  <script>
-  $(function(){
-      $('#datetime24').combodate();
-  });
-</script> -->
+  <!-- <input type="text" id="datetime24" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY     HH : mm" name="datetime" value="21-12-2012 20:30"> -->
+  <!-- {% for quarters in date %}
+    {{quarters}}
+  {% endfor %} -->
   </body>
 </html>
