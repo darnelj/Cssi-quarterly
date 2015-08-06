@@ -111,7 +111,7 @@ class Goal_pageHandler(webapp2.RequestHandler):
             'test' : 'working',
             'namegoal': namegoal
         }
-        template = JINJA_ENVIRONMENT.get_template('html/goal_page.html')
+        template = JINJA_ENVIRONMENT.get_template('html/ind_goal.html')
         self.response.write(template.render(template_values))
 
 class about_usHandler(webapp2.RequestHandler):
