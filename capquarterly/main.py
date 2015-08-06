@@ -18,7 +18,6 @@ import webapp2
 import jinja2
 import os
 import json
-import datetime
 from google.appengine.ext import ndb
 from google.appengine.api import users
 import datetime
@@ -119,36 +118,40 @@ class GoalHandler(webapp2.RequestHandler):
 
 class Goal_pageHandler(webapp2.RequestHandler):
     def get(self):
-        namegoal = self.request.get('namegoal')
         template_values = {
             'test' : 'working',
-            'namegoal': namegoal
         }
-        template = JINJA_ENVIRONMENT.get_template('html/ind_goal.html')
+        template = JINJA_ENVIRONMENT.get_template('html/goal_page.html')
         self.response.write(template.render(template_values))
 
 class about_usHandler(webapp2.RequestHandler):
     def get(self):
         template_values = {
-        'test' : 'working',
+            'test' : 'working',
         }
         template = JINJA_ENVIRONMENT.get_template('html/about_us.html')
         self.response.write(template.render(template_values))
 
 class static_Handler(webapp2.RequestHandler):
     def get(self):
+        namegoal = self.request.get('namegoal')
         user = users.get_current_user()
-        if user:
-            greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
-                          (user.nickname(), users.create_logout_url('/')))
-        else:
-            greeting = ('<a href="%s">Login/Register</a>' %
-                          users.create_login_url('/'))
+        goals_query = Goals.query()
+        goals_query = goals_query.filter(Goals.user_id==user.user_id())
+        goals_list = goals_query.fetch()
         template_values = {
-             'greeting' : greeting
+            'namegoal': namegoal,
+            'record' : goals_list[0]
         }
+
         template = JINJA_ENVIRONMENT.get_template('html/static.html')
-        self.response.write(template.render())
+        self.response.write(template.render(template_values))
+
+    def post(self):
+        print self.request.get('namegoal')
+        goal = Goals(goal= self.request.get("namegoal"))
+        pass
+        template = JINJA_ENVIRONMENT.get_template('html/static.html')
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
