@@ -6,6 +6,7 @@
     <script src="../javascript/about_us.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/goal_page.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/about.css">
   </head>
   <body>
   <a href="/"><img id="logo" src="../css/logo.gif" width =25%></a>
@@ -15,7 +16,8 @@
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/list">My Goals List</a></li>
-    <li><a href="/login">Login</a></li>
+    <li><a href="/us">About Us</a></li>
+    <li>{{greeting|safe}}</li>
   </ul>
   </nav>
   <article class="ind-goal-art">
@@ -24,13 +26,13 @@
   <h4>Creaters of Quarterly: </h4>
   <div>
     <button id="q">Gio</button>
-    <button id="x">Darnel</button>
     <button id="y">Olivia</button>
+    <button id="x">Darnel</button>
   </div>
-  <div>
-    <img src="10263982_247341112125751_3480077433193688444_o.jpg" id="Gio"/>
-    <img src="http://the305.com/blog/wp-content/uploads/2014/07/thweeknd-miami.jpg" id="Olivia"/>
-    <img src="http://the305.com/blog/wp-content/uploads/2014/07/thweeknd-miami.jpg" id="Darnel"/>
+  <div class="clear-fix" id="margin">
+    <div id="Gio"><img src="../css/image.jpg"/ class="profile" /></div>
+    <div id="Olivia"><img src="../css/11035622_10203024401891238_2213619054753887058_o.jpg" class="profile" /></div>
+    <div id="Darnel"><img src="../css/10263982_247341112125751_3480077433193688444_o.jpg"/ class="profile"></div>
   </div>
   </article>
   </body>
