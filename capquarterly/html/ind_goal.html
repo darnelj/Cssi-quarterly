@@ -15,13 +15,14 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/list">My Goals List</a></li>
-      <li><a href="/login">Login</a></li>
+      <li><a href="/us">About Us</a></li>
+      <li>{{greeting|safe}}</li>
     </ul>
     </nav>
   </span>
     <article class="ind-goal-art">
           <form action="/goal" method="post">
-            <h3>My Goals</h3> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
+            <h3>My Goal</h3> <!--This will indicate if your goal is long or short according to w.e the customer wants-->
         <h4 align="center">{{namegoal}}</h4>
         <p id="directions">Now we will separate our goals into four quarters. In each one you will come up with your own task and expectations for each quarter.  Click the plus sign to add more tasks to each quarter.</p>
    <!-- <p>Set up task for all of your Q's, (It should take you "<u>this amount of time</u>")</p> -->
@@ -59,7 +60,9 @@
                 </ul>
               </div>
     </section>
-    <input type="submit" value="Set your Goal" id="quarter-button">
+    </form>
+    <form action="/static" method="get">
+      <input type="submit" value="Next" >
     </form>
     </article>
     </body>
