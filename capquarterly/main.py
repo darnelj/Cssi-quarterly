@@ -34,9 +34,6 @@ class Goals(ndb.Model):
     q1a = ndb.StringProperty()
     q1b = ndb.StringProperty()
     q1c = ndb.StringProperty()
-    q1a = ndb.StringProperty()
-    q1b = ndb.StringProperty()
-    q1c = ndb.StringProperty()
     q2a = ndb.StringProperty()
     q2b = ndb.StringProperty()
     q2c = ndb.StringProperty()
@@ -124,9 +121,16 @@ class about_usHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('html/about_us.html')
         self.response.write(template.render(template_values))
 
+class static_Handler(webapp2.RequestHandler):
+    def get(self):
+
+        template = JINJA_ENVIRONMENT.get_template('html/static.html')
+        self.response.write(template.render())
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/goal', GoalHandler),
     ('/list', Goal_pageHandler),
-    ('/us', about_usHandler)
+    ('/us', about_usHandler),
+    ('/static', static_Handler)
 ], debug=True)
