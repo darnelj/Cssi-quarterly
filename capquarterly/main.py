@@ -23,7 +23,7 @@ from google.appengine.api import users
 import datetime
 
 # from oauth2client import client
-
+namegoal = ""
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -118,6 +118,15 @@ class GoalHandler(webapp2.RequestHandler):
 
 class Goal_pageHandler(webapp2.RequestHandler):
     def get(self):
+        # user = users.get_current_user()
+        # query = Goals.query()
+        # goal_data = query.fetch()
+        # # Pass the data to the template
+        # template_values = {
+        #     'goals' : goal_data
+        # }
+        # template = JINJA_ENVIRONMENT.get_template('/html/goal_page.html')
+        self.response.write(template.render(template_values))
         template_values = {
             'test' : 'working',
         }
@@ -134,11 +143,12 @@ class about_usHandler(webapp2.RequestHandler):
 
 class static_Handler(webapp2.RequestHandler):
     def get(self):
+        namegoal = self.request.get('namegoal')
         keyurl = self.request.get('key')
         key = ndb.Key(urlsafe=keyurl)
         record = key.get()
         template_values = {
-            'namegoal': record.goal,
+            'namegoal': namegoal,
             'record' : record
         }
 

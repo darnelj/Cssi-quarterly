@@ -4,6 +4,7 @@
     <title>Quarterly</title>
     <link rel="stylesheet" type="text/css" href="../css/goal_page.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/static.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../javascript/ind.js"></script>
   </head>
@@ -14,18 +15,17 @@
     <nav>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/goal">My Goals List</a></li>
+      <li><a href="/list">My Goals List</a></li>
       <li><a href="/us">About Us</a></li>
       <li>{{greeting|safe}}</li>
     </ul>
     </nav>
   </span>
-    <article id="ind-goal-art">
-          <form action="/goal" method="post">
-            <h3>Your Goal list</h3>
-
-    </section>
-    </form>
+  <article id="staticart">
+      <h3>Your Goal list</h3>
+      {% for goal in goals %}
+      <p>{{goal}}</p>
+      {% endfor %}
     </article>
     </body>
 </html>
